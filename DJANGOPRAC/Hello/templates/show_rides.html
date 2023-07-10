@@ -1,0 +1,29 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/show_rides.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h1> The following rides are available </h1>
+    {% for obj in rides %}
+        <!-- <p>{{obj.0.drop_loc}}</p> -->
+        <p>{{obj.0.vehicle_plate.company}} {{obj.0.vehicle_plate.model}} The price is {{obj.1}}</p>
+        <form method="post",action='show_rides'>
+            {% csrf_token %}
+            <input type="hidden" name= "ride_otp" value={{obj.0.ride_otp}} />
+            <input type="hidden" name="price" value="{{obj.1}}" />
+            <button type="submit"></button>
+    
+        </form> 
+    {% endfor %}
+    
+    
+    
+
+</body>
+</html>

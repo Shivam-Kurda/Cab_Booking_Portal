@@ -1,0 +1,34 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1> Welcome {{cust.first_name}} to ULA</h1>
+        <!-- <form method="post" action="{% url 'book_ride' %}">
+            <input type="hidden" name="data" value="{{obj}}">
+            <input type="submit" value="Go to second page">
+        </form> -->
+        <form action="home" method="POST">
+            {% csrf_token %}
+            
+            <input type="submit" value="Book Ride">
+           
+        </form>
+
+        <form action="ride_his" method="POST">
+            {% csrf_token %}
+            
+            <input type="submit" value="view ridehistory">
+           
+        </form>
+
+ 
+</body>
+</html>

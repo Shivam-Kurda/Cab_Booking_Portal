@@ -1,0 +1,27 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/driverhome.css' %}">
+    <title>Document</title>
+</head>
+<body>
+   
+    <h1> Welcome {{driverobj.first_name}} to ULA</h1>
+    <table>
+        <tr>
+            <td>
+                <form method="post" action="driver_his">
+                    {% csrf_token %}
+                    <input type="hidden" name="driver_id" value={{driverobj.driver_id}} >
+                    <input type="submit" value="view ride history" >
+                </form>
+            </td>
+        </tr>
+    </table>
+  
+</body>
+</html>

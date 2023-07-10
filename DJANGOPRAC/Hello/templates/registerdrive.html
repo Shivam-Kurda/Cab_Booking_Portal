@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/register_driver.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h1> This is the Driver register page</h1>
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    <form method="post",action="registerdrive">
+        {% csrf_token %}
+
+        <p>Enter your First Name:</p>
+        <input type="text" name="firstname" />
+        <p>Enter your Last Name:</p>
+        <input type="text" name="lastname" />
+        <p> Enter your Phone Number :</p>
+        <input type="text" name="phone_no" />
+        <p> Enter your Email :</p>
+        <input type="email" name="email" />
+        <p> Enter your Password :</p>
+        <input type="password" name="password" />
+        <p> Enter your driver license id</p>
+        <input type="text" name="dlid" /><br>
+        <input type="submit" />
+    </form>
+</body>
+</html>

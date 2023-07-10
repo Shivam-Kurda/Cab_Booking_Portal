@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/payment_ride.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <p>Your ride has been booked.Please do the following payment </p>
+    <p> You have to pay {{objs.3}} amount of money</p>
+    <p>Please select one of below method for payment</p>
+    <form method="post" action="payment_ride">
+        {% csrf_token %}
+        <select name="payment_method" id="payment_method" multiple>
+            <option value="cash">Cash</option>
+            <option value="credit card">credit card</option>
+            <option value="debit card">debit card</option>
+            <option value="net banking">net banking</option>
+        </select>
+        <input type="submit">
+    </form>
+    
+
+        
+</body>
+
+</html>

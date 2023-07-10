@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    color: navy;
+    font-size: 32px;
+  }
+  
+  p {
+    font-size: 18px;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  ul.messages {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  ul.messages li {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid;
+  }
+  
+  ul.messages .success {
+    color: green;
+    background-color: #e7f3e7;
+  }
+  
+  ul.messages .error {
+    color: red;
+    background-color: #f3e7e7;
+  }
+  
+  input[type="email"], input[type="password"], input[type="submit"] {
+    display: block;
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  input[type="submit"] {
+    background-color: navy;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #001f3f;
+  }
+  
+  .messages li a {
+    text-decoration: none;
+    color: navy;
+    font-weight: bold;
+  }
+  
+  .messages li a:hover {
+    text-decoration: underline;
+  }
+  

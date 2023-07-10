@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <h1>This is login Page</h1>
+
+    <form method="post" action="login">
+        {% csrf_token %}
+        <p> Enter your Email Id</p>
+        <input type="email" name="email" />
+        <p>Enter your Password</p>
+        <input type="password" name="pswd" /><br>
+        <input type="submit" />
+
+    </form>
+</body>
+</html>

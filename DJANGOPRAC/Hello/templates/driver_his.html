@@ -1,0 +1,42 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/driver_his.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    {% for obj in ridepay %}
+
+        {% if obj.0.completion_status == "False" or obj.0.completion_status == "FALSE" %}
+            <table>
+                <tr>
+                    
+                    <td>{{obj.0.pickup_loc}}</td>
+                    <td>{{obj.0.drop_loc}}</td>
+                    <td>This is a ongoing ride</td>
+                        
+                   
+
+                </tr>
+            </table>
+        {% else %}
+            <table>
+                <tr>
+                    <td>{{obj.0.pickup_loc}}</td>
+                    <td>{{obj.0.drop_loc}}</td>
+                    <td>{{obj.0.rating}}</td>
+                    <td>{{obj.1.amount}}</td>
+                    <td> {{obj.1.method}}</td>
+                    
+
+                </tr>
+            </table>
+        {% endif %}
+
+    {% endfor %}
+</body>
+</html>

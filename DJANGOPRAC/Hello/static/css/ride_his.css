@@ -1,0 +1,72 @@
+
+body {
+    background-color: #f2f2f2;
+  }
+  
+
+  p {
+    font-size: 24px;
+    color: #333;
+    margin: 10px 0;
+  }
+  
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px 0;
+    background-color: #fff;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  td:first-child {
+    border-left: none;
+  }
+  
+  td:last-child {
+    border-right: none;
+  }
+  
+
+  input[type=submit] {
+    background-color: #f44336;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #da190b;
+  }
+  
+ 
+  table.completed {
+    background-color: #d4edda;
+  }
+  
+  table.completed td:first-child {
+    border-left: 1px solid #28a745;
+  }
+  
+  table.completed td:last-child {
+    border-right: 1px solid #28a745;
+  }
+  
+  table.completed td.amount {
+    color: #28a745;
+  }
+  
+  table.completed td.method {
+    color: #333;
+  }
+  

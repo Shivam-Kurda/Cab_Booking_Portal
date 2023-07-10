@@ -1,0 +1,47 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/ride_his.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <p> Below is your ride history </p>
+    {% for obj in rides %}
+
+        {% if obj.0.completion_status == "False" or obj.completion_status == "FALSE" %}
+            <table>
+                <tr>
+                    <td>{{obj.0.pickup_loc}}</td>
+                    <td>{{obj.0.drop_loc}}</td>
+                    <td>
+                        <form method="POST" action="cancel_ride">
+                            {% csrf_token %}
+                            <input type="submit" value="cancel ride">
+                            <input type="hidden" name="rideotp" value="{{obj.0.ride_otp}}">
+                        </form>
+                    </td>
+
+                </tr>
+            </table>
+        {% else %}
+            <table>
+                <tr>
+                    <td>{{obj.0.pickup_loc}}</td>
+                    <td>{{obj.0.drop_loc}}</td>
+                    <td>{{obj.1.amount}}</td>
+                    <td> {{obj.1.method}}</td>
+                    
+
+                </tr>
+            </table>
+        {% endif %}
+
+    {% endfor %}
+    
+
+</body>
+</html>

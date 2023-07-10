@@ -1,0 +1,28 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/book_ride.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <h1> Welcome {{cust.first_name}} to ULA booking page</h1>
+    <form method="post" action="book_ride">
+        {% csrf_token %}
+        <p> Enter your pickup point</p>
+        <input type="text" name="pickup" />
+        <p>Enter your Drop Point</p>
+        <input type="text" name="drop" /><br>
+        <input type="submit" value="view available rides"  />
+        
+
+    </form>
+
+   
+</body>
+</html>
